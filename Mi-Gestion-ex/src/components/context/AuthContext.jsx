@@ -4,7 +4,31 @@ import usersData from '../../data/users.json';
 const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
-    const [user, setUser] = useState(null);
+    const [user, setUser] = useState({});
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        try {
+            const storedUser = localStorage.getItem('user');
+            console.log(storedUser, "efecto")
+            const parsedUser = JSON.parse(storedUser);
+            console.log(parsedUser.email, "ya parseado")
+            if (storedUser) {
+                const userData = {
+                    email: parsedUser.email,
+                    rol: parsedUser.rol,
+                    permisos: parsedUser.permisos,
+                    token: parsedUser.token
+                };
+                setUser(userData);
+            }
+        } catch (error) {
+            console.error("Error parsing user from localStorage", error);
+            localStorage.removeItem('user'); // Limpieza preventiva
+        } finally {
+            setLoading(false); // <- clave aquí
+        }
+    }, []);
 
     // Simulacion de endpoint Login 
     /* 
@@ -14,24 +38,22 @@ export function AuthProvider({ children }) {
         API retorna JWT, usuario y permisos 
     */
     const login = (email, password) => {
-        const user = usersData.find(
+        const userf = usersData.find(
         (u) => u.email === email && u.password === password
         );
 
-        if (user) {
+        if (userf) {
         // Generar un token falso
         const token = btoa(`${email}:${Date.now()}`);
 
         const userData = {
-            email: user.email,
-            rol: user.rol,
-            permisos: user.permisos,
+            email: userf.email,
+            rol: userf.rol,
+            permisos: userf.permisos,
             token
         };
-
-        localStorage.setItem('token', token);
-        localStorage.setItem('user', email);
         setUser(userData);
+        localStorage.setItem('user', JSON.stringify(userData));
         return true;
         }
 
@@ -40,13 +62,18 @@ export function AuthProvider({ children }) {
 
     // funcion para cerrar sesion y limpiar variables del usuario.
     const logout = () => {
-        localStorage.removeItem('token');
+        const userData = {
+            email: "",
+            rol: "",
+            permisos: "",
+            token: ""
+        };
         localStorage.removeItem('user');
-        setUser(null);
+        setUser(userData);
     };
 
     return (
-        <AuthContext.Provider value={{ user, login, logout }}>
+        <AuthContext.Provider value={{ user, login, logout, loading }}>
             {children}
         </AuthContext.Provider>
     );
