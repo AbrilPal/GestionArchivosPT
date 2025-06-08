@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
+import TablaExpediente from '../tablaExpediente/TablaExpediente'
 
 export default function Home() {
     const { user, logout } = useAuth();
@@ -38,7 +39,11 @@ export default function Home() {
                     </Toolbar>
                 </AppBar>
             </Box>
-            <h1>Bienvenido, {user.rol}</h1>
+            <h1>Bienvenido, {user.email}</h1>
+            <br></br>
+            <main>
+                <TablaExpediente />
+            </main>
         </>
     );
 }

@@ -1,0 +1,27 @@
+[
+    {
+        "id": "1",
+        "titulo": "Expediente ejemplo 1",
+        "Tipo": "digital",
+        "fiscalRemitente": "Andrea Lopez",
+        "fechaRecepcion": "2022-01-01",
+        "estado": "Ingreso"
+    },
+    {
+        "id": "2",
+        "titulo": "Expediente ejemplo 2",
+        "Tipo": "digital",
+        "fiscalRemitente": "Jose Pablo",
+        "fechaRecepcion": "2022-01-27",
+        "estado": "En prestamo"
+    },
+    {
+        "id": "3",
+        "titulo": "Expediente ejemplo 3",
+        "Tipo": "fisico",
+        "fiscalRemitente": "Alexander Perez",
+        "fechaRecepcion": "2022-01-01",
+        "estado": "Egreso"
+    }
+    
+]
