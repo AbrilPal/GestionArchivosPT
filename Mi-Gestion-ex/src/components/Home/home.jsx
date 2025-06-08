@@ -12,8 +12,8 @@ export default function Home() {
 
     return (
         <div>
-        <h1>Bienvenido, {user.email}</h1>
-        <button onClick={handleLogout}>Cerrar sesión</button>
+            <h1>Bienvenido, {user.rol}</h1>
+            <button onClick={handleLogout}>Cerrar sesión</button>
         </div>
     );
 }
