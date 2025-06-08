@@ -5,6 +5,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import './login.css'
 import CircularProgress from '@mui/material/CircularProgress';
+import Alert from '@mui/material/Alert';
 
 export default function Login() {
     const { login,logout } = useAuth();
@@ -65,7 +66,7 @@ export default function Login() {
                     {loading ? <CircularProgress size={24} color="inherit" /> : 'Entrar'}
                 </Button>
             </form>
-            {error && <p style={{ color: 'red' }}>{error}</p>}
+            {error && <Alert severity="error">{error}</Alert>}
         </div>
     );
 }
