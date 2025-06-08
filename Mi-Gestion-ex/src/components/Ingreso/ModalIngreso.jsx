@@ -38,6 +38,7 @@ export default function ModalIngreso({ open, handleClose }) {
 
 
     useEffect(() => {
+        
         const fechaActual = new Date();
         const yyyy = fechaActual.getFullYear();
         const mm = String(fechaActual.getMonth() + 1).padStart(2, '0');
@@ -45,6 +46,14 @@ export default function ModalIngreso({ open, handleClose }) {
         setToday(`${yyyy}-${mm}-${dd}`);
 
         setExpedientes(expedienteData); 
+
+        return () => {
+            // esto se ejecutaría al desmontarse
+            console.log("entro a limpiar")
+            setTitulo('');
+            setTipo('');
+            setFiscal('');
+        };
     }, []);
 
     const handleSubmit = (e) => {
@@ -69,7 +78,12 @@ export default function ModalIngreso({ open, handleClose }) {
         Fiscal Remitente: ${nuevo.fiscalRemitente}
         Fecha Recepción: ${nuevo.fechaRecepcion}
         Estado: ${nuevo.estado}
-        `);
+    `);
+
+    // Si es succes el request de API que haga esto, si no es correcto que no limpie y cierre modal
+    setTitulo('');
+    setTipo('');
+    setFiscal('');
     handleClose();
 };
 
