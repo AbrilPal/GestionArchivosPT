@@ -10,9 +10,7 @@ export function AuthProvider({ children }) {
     useEffect(() => {
         try {
             const storedUser = localStorage.getItem('user');
-            console.log(storedUser, "efecto")
             const parsedUser = JSON.parse(storedUser);
-            console.log(parsedUser.email, "ya parseado")
             if (storedUser) {
                 const userData = {
                     email: parsedUser.email,
@@ -23,10 +21,9 @@ export function AuthProvider({ children }) {
                 setUser(userData);
             }
         } catch (error) {
-            console.error("Error parsing user from localStorage", error);
-            localStorage.removeItem('user'); // Limpieza preventiva
+            localStorage.removeItem('user'); 
         } finally {
-            setLoading(false); // <- clave aquí
+            setLoading(false); 
         }
     }, []);
 

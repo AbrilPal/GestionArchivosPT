@@ -2,6 +2,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import Home from './components/Home/home';
 import ProtectedRoute from './ProtectedRoute';
 import Login from './components/Login/Login';
+import './app.css'
 
 function App() {
   return (
