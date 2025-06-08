@@ -15,7 +15,6 @@ import {
 import { styled } from '@mui/material/styles';
 import CloseIcon from '@mui/icons-material/Close';
 
-// Estilizado del modal
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
     '& .MuiPaper-root': {
         width: '700px',
@@ -30,12 +29,12 @@ const BootstrapDialog = styled(Dialog)(({ theme }) => ({
     },
 }));
 
-// Componente ModalIngreso
 export default function ModalIngreso({ open, handleClose, expedienteInicial, onGuardar }) {
     const [titulo, setTitulo] = useState('');
     const [tipo, setTipo] = useState('');
     const [fiscal, setFiscal] = useState('');
     const [today, setToday] = useState('');
+    const [estado, setEstado] = useState('');
 
     useEffect(() => {
         setToday(fechaHoy());
@@ -47,10 +46,12 @@ export default function ModalIngreso({ open, handleClose, expedienteInicial, onG
             setTipo(expedienteInicial.Tipo || '');
             setFiscal(expedienteInicial.fiscalRemitente || '');
             setToday(expedienteInicial.fechaRecepcion || '')
+            setEstado(expedienteInicial.estado || '')
         } else {
             setTitulo('');
             setTipo('');
             setFiscal('');
+            setEstado('')
             setToday(fechaHoy());
         }
     }, [expedienteInicial, open]);
@@ -72,7 +73,7 @@ export default function ModalIngreso({ open, handleClose, expedienteInicial, onG
             Tipo: tipo,
             fiscalRemitente: fiscal,
             fechaRecepcion: expedienteInicial?.fechaRecepcion || today,
-            estado: expedienteInicial?.estado || 'Ingreso',
+            estado: estado || 'Ingreso',
             solicitante: expedienteInicial?.solicitante || [],
         };
 
@@ -157,6 +158,23 @@ export default function ModalIngreso({ open, handleClose, expedienteInicial, onG
                         value={today}
                         disabled
                     />
+                    {expedienteInicial ? 
+                    <>
+                    <Box mt={2}>
+                        <InputLabel id="estado-label">Estado</InputLabel>
+                        <Select
+                            labelId="estado-label"
+                            fullWidth
+                            required
+                            value={estado}
+                            onChange={(e) => setEstado(e.target.value)}
+                        >
+                            <MenuItem value="Ingreso">Ingreso</MenuItem>
+                            <MenuItem value="En prestamo">En prestamo</MenuItem>
+                            <MenuItem value="Egreso">Egreso</MenuItem>
+                        </Select>
+                    </Box>
+                    </>:<></>}
                 </DialogContent>
 
                 <DialogActions>

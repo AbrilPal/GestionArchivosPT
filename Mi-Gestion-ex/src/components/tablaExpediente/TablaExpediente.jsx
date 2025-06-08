@@ -39,20 +39,8 @@ export default function TablaExpediente() {
 
     const handleGuardar = (expedienteActualizado) => {
         console.log('Guardado:', expedienteActualizado);
-
-        // Simulamos guardar en estado local
-        setExpedientes((prev) => {
-            const index = prev.findIndex(e => e.id === expedienteActualizado.id);
-            if (index !== -1) {
-                // Editar existente
-                const copia = [...prev];
-                copia[index] = expedienteActualizado;
-                return copia;
-            } else {
-                // Agregar nuevo
-                return [...prev, { ...expedienteActualizado, id: (prev.length + 1).toString() }];
-            }
-        });
+        alert(`Expediente guardado:\n${JSON.stringify(expedienteActualizado, null, 2)}`);
+        // Consumo de API aqui 
 
         handleCloseModal();
     };
