@@ -10,7 +10,7 @@ import { KeyboardArrowDown, KeyboardArrowUp } from '@mui/icons-material';
 import HistorialRow from './HistorialRow'
 
 // Componente fila expandible
-export default function Row({ row }) {
+export default function Row({ row, onEdit }) {
     const [open, setOpen] = useState(false);
 
     return (
@@ -53,7 +53,7 @@ export default function Row({ row }) {
                 )}
             </TableCell>
             <TableCell align="center">
-                <Button>Editar</Button>
+                <Button onClick={() => onEdit(row)}>Editar</Button>
             </TableCell>
         </TableRow>
         <TableRow>
