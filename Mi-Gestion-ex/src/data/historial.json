@@ -1,0 +1,61 @@
+[
+    {
+        "id": "1",
+        "expediente": "1",
+        "estado": "Ingreso",
+        "fecha": "2021-01-01",
+        "solicitante": []
+    },
+    {
+        "id": "2",
+        "expediente": "1",
+        "estado": "En prestamo",
+        "fecha": "2021-01-11",
+        "solicitante": [
+            {
+                "fiscal": "Alejandro Pineda",
+                "fechaEntrega": "2023-01-01",
+                "motivo": "Este es un ejemplo de un motivo."
+            }
+        ]
+    },
+    {
+        "id": "3",
+        "expediente": "1",
+        "estado": "En prestamo",
+        "fecha": "2021-04-11",
+        "solicitante": [
+            {
+                "fiscal": "Alejandro Perez",
+                "fechaEntrega": "2023-02-01",
+                "motivo": "Texto ejemplo."
+            }
+        ]
+    },
+    {
+        "id": "4",
+        "expediente": "2",
+        "estado": "En prestamo",
+        "fecha": "2021-04-11",
+        "solicitante": [
+            {
+                "fiscal": "Alejandro Perez",
+                "fechaEntrega": "2023-02-01",
+                "motivo": "Texto ejemplo."
+            }
+        ]
+    },
+    {
+        "id": "5",
+        "expediente": "3",
+        "estado": "Egreso",
+        "fecha": "2022-06-11",
+        "solicitante": [
+            {
+                "fiscal": "Fatima Jimenez",
+                "fechaEntrega": "2022-12-01",
+                "motivo": "Texto ejemplo de un egreso."
+            }
+        ]
+    }
+]
