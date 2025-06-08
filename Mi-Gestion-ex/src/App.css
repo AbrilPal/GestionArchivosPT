@@ -52,3 +52,7 @@ body {
     color: #991515;
     font-weight: bolder;
 }
+
+.css-1cennmq-MuiBackdrop-root-MuiDialog-backdrop {
+    backdrop-filter: blur(2px);
+}

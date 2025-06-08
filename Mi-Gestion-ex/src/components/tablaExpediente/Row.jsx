@@ -58,7 +58,7 @@ export default function Row({ row }) {
         </TableRow>
         <TableRow>
             {open && (
-                <HistorialRow key={row.id} id={row.id} estado={open} />
+                <HistorialRow key={row.id} id={row.id} estado={open} titulo={row.titulo} />
             )}
         </TableRow>
         </>
