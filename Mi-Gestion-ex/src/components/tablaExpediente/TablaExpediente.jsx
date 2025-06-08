@@ -27,12 +27,12 @@ export default function TablaExpediente() {
                 <TableHead sx={{ backgroundColor: '#292561' }}>
                 <TableRow>
                     <TableCell />
-                    <TableCell sx={{ color: 'white' }}>ID</TableCell>
-                    <TableCell sx={{ color: 'white' }}>Título</TableCell>
-                    <TableCell sx={{ color: 'white' }}>Tipo</TableCell>
-                    <TableCell sx={{ color: 'white' }}>Fiscal Remitente</TableCell>
-                    <TableCell sx={{ color: 'white' }}>Fecha de Recepción</TableCell>
-                    <TableCell sx={{ color: 'white' }}>Estado</TableCell>
+                    <TableCell align="center" sx={{ color: 'white' }}>ID</TableCell>
+                    <TableCell align="center" sx={{ color: 'white' }}>Título</TableCell>
+                    <TableCell align="center" sx={{ color: 'white' }}>Tipo</TableCell>
+                    <TableCell align="center" sx={{ color: 'white' }}>Fiscal Remitente</TableCell>
+                    <TableCell align="center" sx={{ color: 'white' }}>Fecha de Recepción</TableCell>
+                    <TableCell align="center" sx={{ color: 'white' }}>Estado</TableCell>
                     <TableCell></TableCell>
                 </TableRow>
                 </TableHead>

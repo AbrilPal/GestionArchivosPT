@@ -44,5 +44,18 @@
                 "motivo": "Texto ejemplo."
             }
         ]
+    },
+    {
+        "id": "5",
+        "expediente": "3",
+        "estado": "Egreso",
+        "fecha": "2022-06-11",
+        "solicitante": [
+            {
+                "fiscal": "Fatima Jimenez",
+                "fechaEntrega": "2022-12-01",
+                "motivo": "Texto ejemplo de un egreso."
+            }
+        ]
     }
 ]
