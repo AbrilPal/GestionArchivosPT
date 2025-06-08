@@ -1,42 +1,58 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+:root {
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    color-scheme: light dark;
+    color: rgba(14, 2, 2, 0.87);
+    background-color: color(srgb 0.9999 1 1);
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+a {
+    font-weight: 500;
+    color: #646cff;
+    text-decoration: inherit;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+a:hover {
+    color: #535bf2;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body {
+    margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.estado-prestamo {
+    background-color: #ffa50061;
+    border-radius: 10px;
+    padding: 5px;
+    border: 1px solid orange;
+    color: #b8872e;
+    font-weight: bolder;
 }
 
-.card {
-  padding: 2em;
+.estado-ingresado {
+    background-color: #a8f9958a;
+    border-radius: 10px;
+    padding: 5px;
+    border: 1px solid #7bad2d;
+    color: #688c30;
+    font-weight: bolder;
 }
 
-.read-the-docs {
-  color: #888;
+.estado-egreso {
+    background-color: #ff000054;
+    border-radius: 10px;
+    padding: 5px;
+    border: 1px solid red;
+    color: #991515;
+    font-weight: bolder;
+}
+
+.css-1cennmq-MuiBackdrop-root-MuiDialog-backdrop {
+    backdrop-filter: blur(2px);
 }

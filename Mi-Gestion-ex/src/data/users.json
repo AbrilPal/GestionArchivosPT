@@ -1,0 +1,23 @@
+[
+    {
+        "email": "admin@demo.com",
+        "password": "1234",
+        "rol" : "archivo",
+        "permisos": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ]
+    },
+    {
+        "email": "andrea@ejemplo.com",
+        "password": "5678",
+        "rol" : "fiscal",
+        "permisos": [
+            4,
+            5
+        ]
+    }
+]

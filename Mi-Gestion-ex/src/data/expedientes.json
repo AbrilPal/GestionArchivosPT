@@ -1,0 +1,42 @@
+[
+    {
+        "id": "1",
+        "titulo": "Ejemplo 1",
+        "Tipo": "digital",
+        "fiscalRemitente": "Andrea Lopez",
+        "fechaRecepcion": "2022-01-01",
+        "estado": "Ingreso",
+        "solicitante": []
+        
+    },
+    {
+        "id": "2",
+        "titulo": "Ejemplo 2",
+        "Tipo": "digital",
+        "fiscalRemitente": "Jose Pablo",
+        "fechaRecepcion": "2022-01-27",
+        "estado": "En prestamo",
+        "solicitante": 
+            {
+                "fiscal": "Alejandro Perez",
+                "fechaEntrega": "2023-02-01",
+                "motivo": "Texto ejemplo."
+            }
+        
+    },
+    {
+        "id": "3",
+        "titulo": "Ejemplo 3",
+        "Tipo": "fisico",
+        "fiscalRemitente": "Alexander Perez",
+        "fechaRecepcion": "2022-01-01",
+        "estado": "Egreso",
+        "solicitante": 
+            {
+                "fiscal": "Fatima Jimenez",
+                "fechaEntrega": "2022-12-01",
+                "motivo": "Texto ejemplo de un egreso."
+            }
+    }
+    
+]
