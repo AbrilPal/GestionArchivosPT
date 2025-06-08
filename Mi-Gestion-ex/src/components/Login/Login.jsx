@@ -1,14 +1,18 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
 export default function Login() {
-    const { login } = useAuth();
+    const { login,logout } = useAuth();
     const navigate = useNavigate();
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
+
+    useEffect(() => {
+        logout()
+    }, [])
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -16,9 +20,9 @@ export default function Login() {
         const success = login(email, password);
 
         if (success) {
-        navigate('/home');
+            navigate('/home');
         } else {
-        setError('Correo o contraseña incorrectos');
+            setError('Correo o contraseña incorrectos');
         }
     };
 
@@ -27,18 +31,18 @@ export default function Login() {
         <h2>Iniciar sesión</h2>
         <form onSubmit={handleSubmit}>
             <input
-            type="email"
-            placeholder="Correo electrónico"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
+                type="email"
+                placeholder="Correo electrónico"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
             /><br /><br />
             <input
-            type="password"
-            placeholder="Contraseña"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
+                type="password"
+                placeholder="Contraseña"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
             /><br /><br />
             <button type="submit">Entrar</button>
         </form>
